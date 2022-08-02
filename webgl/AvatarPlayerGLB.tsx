@@ -145,24 +145,24 @@ export default function AvatarPlayerGLB(props:any) {
       const rotArray = []
       position.toArray(posArray)
       console.log("----", id, position);
-      // socket.emit('move', {
-      //     id,
-      //     position: posArray,
-      // })
+      socket.emit('move', {
+          id,
+          position: posArray,
+      })
     }
     if (avatarRef.current){
       setUpdateCallback(
-        controlRef.current.addEventListener('change', onControlChange)
+        avatarRef.current.addEventListener('change', onControlChange)
       )
     }
 
     return()=>{
-      if(updateCallback && controlRef.current)
-      controlRef.current.removeEventListener(
+      if(updateCallback && avatarRef.current)
+      avatarRef.current.removeEventListener(
         'change', onControlChange
       )
     }
-  }, [controlRef, socket])
+  }, [avatarRef, socket])
 
   return (
     <>

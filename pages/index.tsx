@@ -207,11 +207,12 @@ const Home: NextPage = () => {
                     playerPosition: position,
                     pointer: position
                   })
+                  setFirstFlag(false)
                   return(
                     // <PlayerDesktop/>
                     <PlayerDesktop position={position}/>
                   )
-                  setFirstFlag(false)
+                  
                 }else{
                   return(
                     <PlayerDesktop/>
