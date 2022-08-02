@@ -28,7 +28,7 @@ const PlayerDesktop = (props: any) => {
     api.velocity.subscribe((v: number[]) => (velocity.current = v));
   }, [api.velocity]);
 
-  console.log("playerPosition--", playerPosition, pointer)
+  // console.log("playerPosition--", playerPosition, pointer)
   useFrame(() => {
     const pV = new THREE.Vector3(pointer[0], 0, pointer[2]);
     const avatarPos = new THREE.Vector3(playerPosition?.x, 0, playerPosition?.z);

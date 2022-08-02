@@ -152,9 +152,7 @@ const Home: NextPage = () => {
             {Object.keys(clients)
               .filter((clientKey) => clientKey !== socketClient.id)
               .map((client)=>{
-                console.log("=========", clients[client])
                 const {mouseDown} = clients[client]
-                console.log("-----------", mouseDown)
                 if ( mouseDown !== undefined) {
                   useStore.setState({
                     otherPointer: mouseDown
