@@ -63,8 +63,11 @@ ioServer.on('connection', (client) => {
     
     client.on("move", ({id, position}) => {
         clients[id].position = position;
-        clients[id].start = true;
         ioServer.sockets.emit("move", clients);
+    })
+    client.on('mouseDown', ({id, mouseDown}) =>{
+        clients[id].mouseDown = mouseDown;
+        ioServer.sockets.emit("mouseDown", clients);
     })
     client.on('disconnect', () => {
         console.log(

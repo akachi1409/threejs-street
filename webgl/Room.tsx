@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
 import useStore from '../helpers/store';
 
 export default function Room(props: any) {
+  const [socket, setSocket] = useState(props.socket);
   let scene;
   let localItem = localStorage.getItem('model');
   if (!localItem) {
@@ -39,6 +40,12 @@ export default function Room(props: any) {
       pointer: [x, y, z],
       distance: v.distanceTo(playerPosition),
     });
+    const { id } = socket
+    socket.emit('mouseDown', {
+      id, 
+      mouseDown: [x, y, z]
+    }
+    )
   };
 
   return (

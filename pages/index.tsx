@@ -148,7 +148,21 @@ const Home: NextPage = () => {
               console.log("clients", clients);
               setClients(clients)
           })
-
+          socketClient.on('mouseDown', (clients) => {
+            {Object.keys(clients)
+              .filter((clientKey) => clientKey !== socketClient.id)
+              .map((client)=>{
+                console.log("=========", clients[client])
+                const {mouseDown} = clients[client]
+                console.log("-----------", mouseDown)
+                if ( mouseDown !== undefined) {
+                  useStore.setState({
+                    otherPointer: mouseDown
+                  })
+                }
+                
+              })}
+          })
           
       }
   }, [socketClient])
@@ -191,7 +205,7 @@ const Home: NextPage = () => {
             />
             <Physics gravity={[0, -500, 0]}>
               <Collisions />
-              <Room visible={true} position={[0, 0, 0]} />
+              <Room visible={true} position={[0, 0, 0]} socket={socketClient}/>
 
               <PositionPointer/>
               {/* <PlayerDesktop  position={[1,1,1]} socket={socketClient}/>
