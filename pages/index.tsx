@@ -128,6 +128,7 @@ const Home: NextPage = () => {
   const [socketClient, setSocketClient] = useState(null)
   const [clients, setClients] = useState({})
 
+  const [firstFlag, setFirstFlag] = useState(true);
   
   useEffect(() => {
       // On mount initialize the socket connection
@@ -201,14 +202,22 @@ const Home: NextPage = () => {
               .map((client)=>{
                 const { position } = clients[client];
                 console.log("player", position)
-                useStore.setState({
-                  playerPosition: position,
-                  pointer: position
-                })
-                return(
-                  // <PlayerDesktop/>
-                  <PlayerDesktop position={position}/>
-                )
+                if (firstFlag){
+                  useStore.setState({
+                    playerPosition: position,
+                    pointer: position
+                  })
+                  return(
+                    // <PlayerDesktop/>
+                    <PlayerDesktop position={position}/>
+                  )
+                  setFirstFlag(false)
+                }else{
+                  return(
+                    <PlayerDesktop/>
+                  )
+                }
+                
               })}
               
 

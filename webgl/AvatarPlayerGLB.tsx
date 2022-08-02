@@ -136,34 +136,33 @@ export default function AvatarPlayerGLB(props:any) {
       
     }
   })
-  // useEffect(()=>{
-  //   console.log("----------", controlRef, socket)
-  //   const onControlChange = (val) =>{
-  //     console.log("-----", val);
-  //     const { position, rotation } = val.target.object
-  //     const { id } = socket
-  //     const posArray = []
-  //     const rotArray = []
-  //     position.toArray(posArray)
-  //     console.log("----", id, position);
-  //     // socket.emit('move', {
-  //     //     id,
-  //     //     position: posArray,
-  //     // })
-  //   }
-  //   if (avatarRef.current){
-  //     setUpdateCallback(
-  //       controlRef.current.addEventListener('change', onControlChange)
-  //     )
-  //   }
+  useEffect(()=>{
+    const onControlChange = (val) =>{
+      console.log("-----", val);
+      const { position, rotation } = val.target.object
+      const { id } = socket
+      const posArray = []
+      const rotArray = []
+      position.toArray(posArray)
+      console.log("----", id, position);
+      // socket.emit('move', {
+      //     id,
+      //     position: posArray,
+      // })
+    }
+    if (avatarRef.current){
+      setUpdateCallback(
+        controlRef.current.addEventListener('change', onControlChange)
+      )
+    }
 
-  //   return()=>{
-  //     if(updateCallback && controlRef.current)
-  //     controlRef.current.removeEventListener(
-  //       'change', onControlChange
-  //     )
-  //   }
-  // }, [controlRef, socket])
+    return()=>{
+      if(updateCallback && controlRef.current)
+      controlRef.current.removeEventListener(
+        'change', onControlChange
+      )
+    }
+  }, [controlRef, socket])
 
   return (
     <>
