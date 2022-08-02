@@ -1,0 +1,165 @@
+
+.loader{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100000000;
+  padding: 0px;
+  background: rgb(106, 224, 245);
+  transition: opacity 2000ms ease 2000ms;
+  opacity: 100;
+  pointer-events: none;
+  display: block;
+}
+.loader_text{
+  position: absolute;
+  top: calc(50% + 50px);
+  width: 100%;
+  color: rgb(255, 105, 0);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.loader_spinner{
+  position: absolute;
+  top: calc(50% - 36px);
+  left: calc(50% - 36px);
+  width: 72px;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(247, 247, 245);
+  transition: opacity 2000ms ease 0s;
+  opacity: 100;
+  -webkit-animation: "cwSpin 1s linear .2s infinite";
+  -moz-animation: "cwSpin .666s linear .2s infinite";
+  -o-animation: "cwSpin .666s linear .2s infinite";
+  -ms-animation: "cwSpin .666s linear .2s infinite";
+  animation: "cwSpin .666s linear .2s infinite";
+}
+
+.loader_ring1{
+  position: absolute;
+  transform: rotate(45deg);
+  inset: 0px;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-color: white transparent transparent;
+  
+  -webkit-animation: ring1 2.6s linear .4s infinite;
+  -moz-animation: ring1 2.6s linear .4s infinite;
+  -o-animation: ring1 2.6s linear .4s infinite;
+  -ms-animation: ring1 2.6s linear .4s infinite;
+  animation: ring1 2.6s linear .4s infinite;
+}
+
+.loader_ring2{
+  position: absolute;
+  transform: rotate(45deg);
+  inset: 0px;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-color: rgb(24, 41, 196) transparent transparent;
+  animation-duration: 2.6s;
+  
+  -webkit-animation: ring2 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .0s infinite;
+  -moz-animation: ring2 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .0s infinite;
+  -o-animation: ring2 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .0s infinite;
+  -ms-animation: ring2 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .0s infinite;
+  animation: ring2 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .0s infinite;
+}
+
+.loader_ring3{
+  position: absolute;
+  transform: rotate(60deg);
+  inset: 0px;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-color: rgb(255, 105, 0) transparent transparent;
+  
+  -webkit-animation: ring3 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .4s infinite;
+  -moz-animation: ring3 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .4s infinite;
+  -o-animation: ring3 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .4s infinite;
+  -ms-animation: ring3 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .4s infinite;
+  animation: ring3 2.6s cubic-bezier(0.51, 0.06, 0.48, 0.93) .4s infinite;  
+}
+
+@-webkit-keyframes ring1
+{
+	0%{-webkit-transform:rotate(0deg);	}
+	100%{-webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes ring1
+{
+	0%{-moz-transform:rotate(0deg);	}
+	100%{-moz-transform:rotate(360deg); }
+}
+
+@-o-keyframes ring1
+{
+	0%{-o-transform:rotate(0deg);	}
+	100%{-o-transform:rotate(360deg); }
+}
+
+@keyframes ring1
+{
+	0%{transform:rotate(0deg);	}
+	100%{transform:rotate(360deg); }
+}
+
+@-webkit-keyframes ring2
+{
+	0%{-webkit-transform:rotate(0deg);	}
+	100%{-webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes ring2
+{
+	0%{-moz-transform:rotate(0deg);	}
+	100%{-moz-transform:rotate(360deg); }
+}
+
+@-o-keyframes ring2
+{
+	0%{-o-transform:rotate(0deg);	}
+	100%{-o-transform:rotate(360deg); }
+}
+
+@keyframes ring2
+{
+	0%{transform:rotate(0deg);	}
+	100%{transform:rotate(360deg); }
+}
+
+@-webkit-keyframes ring3
+{
+	0%{-webkit-transform:rotate(0deg);	}
+	100%{-webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes ring3
+{
+	0%{-moz-transform:rotate(0deg);	}
+	100%{-moz-transform:rotate(360deg); }
+}
+
+@-o-keyframes ring3
+{
+	0%{-o-transform:rotate(0deg);	}
+	100%{-o-transform:rotate(360deg); }
+}
+
+@keyframes ring3
+{
+	0%{transform:rotate(0deg);	}
+	100%{transform:rotate(360deg); }
+}

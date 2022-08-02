@@ -1,0 +1,128 @@
+{
+  "folders": [{ "path": ".." }],
+  "settings": {
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "files.exclude": {
+      ".browserslistrc": true,
+      // ".editorconfig": true,
+      ".firebase": true,
+      ".firebaserc": true,
+      ".husky": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      // "**/node_modules": true,
+      "e2e": true,
+      // "glob-ls.js": true,
+      "info": true,
+      "ionic.config.json": true,
+      "karma.conf.js": true,
+      "plugins": true,
+      "resources": true,
+      "scripts": true,
+      "www": true
+    },
+    "files.watcherExclude": {
+      ".browserslistrc": true,
+      ".editorconfig": true,
+      ".firebase": true,
+      ".firebaserc": true,
+      ".husky": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "e2e": true,
+      "glob-ls.js": true,
+      "info": true,
+      "ionic.config.json": true,
+      "karma.conf.js": true,
+      "plugins": true,
+      "resources": true,
+      "scripts": true,
+      "www": true
+    },
+    "search.exclude": {
+      ".browserslistrc": true,
+      ".editorconfig": true,
+      ".firebase": true,
+      ".firebaserc": true,
+      ".husky": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "e2e": true,
+      "glob-ls.js": true,
+      "info": true,
+      "ionic.config.json": true,
+      "karma.conf.js": true,
+      "plugins": true,
+      "resources": true,
+      "scripts": true,
+      "www": true
+    },
+    "editor.lineHeight": 36,
+    "editor.formatOnSave": false,
+    "typescript.format.enable": false,
+    "html.format.enable": false,
+    "editor.formatOnPaste": false,
+    "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify",
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+
+    "prettier.singleQuote": true,
+    "beautify.language": {
+      "js": {
+        "type": ["javascript"],
+        "filename": [".jshintrc", ".jsbeautifyrc"]
+      },
+      "html": ["htm", "html"]
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#1a1a1a",
+      "activityBar.activeBorder": "#606020",
+      "activityBar.background": "#1a1a1a",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#606020",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "statusBar.background": "#000000",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#1a1a1a",
+      "titleBar.activeBackground": "#000000",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#00000099",
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "sash.hoverBorder": "#1a1a1a",
+      "statusBarItem.remoteBackground": "#000000",
+      "statusBarItem.remoteForeground": "#e7e7e7"
+    },
+    "peacock.color": "#000000",
+    "conventionalCommits.scopes": ["*"]
+  }
+}

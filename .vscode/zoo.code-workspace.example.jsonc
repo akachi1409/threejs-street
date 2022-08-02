@@ -1,0 +1,132 @@
+{
+  "folders": [{ "path": ".." }],
+  "settings": {
+    "workbench.colorTheme": "Dark+ Material",
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 18,
+    "files.exclude": {
+      ".build": true,
+      ".dev": true,
+      ".dextron-build": true,
+      ".docker": true,
+      ".husky": true,
+      ".pack": true,
+      ".serverless_plugins": true,
+      ".serverless": true,
+      ".sublime": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "platforms": true,
+      "plugins": true,
+      "resources": true,
+      "code-push": true,
+      "e2e": true,
+      ".angular": true,
+      "scripts": true,
+      "www": true
+    },
+    "files.watcherExclude": {
+      ".build": true,
+      ".dev": true,
+      ".dextron-build": true,
+      ".docker": true,
+      ".husky": true,
+      ".pack": true,
+      ".serverless_plugins": true,
+      ".serverless": true,
+      ".sublime": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "platforms": true,
+      "plugins": true,
+      "resources": true,
+      "code-push": true,
+      "e2e": true,
+      ".angular": true,
+      "scripts": true,
+      "www": true
+    },
+    "search.exclude": {
+      ".build": true,
+      ".dev": true,
+      ".dextron-build": true,
+      ".docker": true,
+      ".husky": true,
+      ".pack": true,
+      ".serverless_plugins": true,
+      ".serverless": true,
+      ".sublime": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "platforms": true,
+      "plugins": true,
+      "resources": true,
+      "code-push": true,
+      "e2e": true,
+      ".angular": true,
+      "scripts": true,
+      "www": true
+    },
+    "editor.lineHeight": 36,
+    "editor.formatOnSave": false,
+    "typescript.format.enable": false,
+    "html.format.enable": false,
+    "editor.formatOnPaste": false,
+    "[html]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "[scss]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": true,
+    "beautify.language": {
+      "js": {
+        "type": ["javascript"],
+        "filename": [".jshintrc", ".jsbeautifyrc"]
+      },
+      "html": ["htm", "html"]
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#89644a",
+      "activityBar.activeBorder": "#6eb18a",
+      "activityBar.background": "#89644a",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#6eb18a",
+      "activityBarBadge.foreground": "#15202b",
+      "statusBar.background": "#684c38",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#89644a",
+      "titleBar.activeBackground": "#684c38",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#684c3899",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#684c38",
+    "conventionalCommits.scopes": ["*", "api:*", "ui:*"]
+  }
+}
