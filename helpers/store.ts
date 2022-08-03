@@ -14,6 +14,7 @@ const useStore = create(() => {
     otherPosition: [2, 0.5, 2],
     otherPointer: [1, 0.5, 1],
     otherDistance: 0,
+    otherAnimation:'Idle',
 
     name:'',
     hairStyle:8,

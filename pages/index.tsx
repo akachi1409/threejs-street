@@ -152,10 +152,11 @@ const Home: NextPage = () => {
             {Object.keys(clients)
               .filter((clientKey) => clientKey !== socketClient.id)
               .map((client)=>{
-                const {mouseDown} = clients[client]
+                const {mouseDown, distance} = clients[client]
                 if ( mouseDown !== undefined) {
                   useStore.setState({
-                    otherPointer: mouseDown
+                    otherPointer: mouseDown,
+                    otherDistance: distance
                   })
                 }
                 

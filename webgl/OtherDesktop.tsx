@@ -20,17 +20,17 @@ const OtherDesktop = (props: any) =>{
     const velocity = useRef([0, 0.0, 0]);
     const otherPosition: any = useStore((s) => s.otherPosition);
     const otherPointer: any = useStore((s) => s.otherPointer);
-
+    const otherDistance: any = useStore((s) => s.otherDistance)
     useEffect(() => {
         api.velocity.subscribe((v: number[]) => (velocity.current = v));
       }, [api.velocity]);
 
-    console.log("otherPosition--", otherPosition, otherPointer)
+    // console.log("otherPosition--", otherPosition, otherPointer)
     useFrame(() => {
         // console.log("otherPosition", otherPosition, otherPointer)
         const pV = new THREE.Vector3(otherPointer[0], 0, otherPointer[2]);
         const avatarPos = new THREE.Vector3(otherPosition?.x, 0, otherPosition?.z);
-
+        useStore.setState({ otherDistance: pV.distanceTo(avatarPos) });
         const direction = new THREE.Vector3(0, 0, 0);
         if (pV.distanceTo(avatarPos) >= 0.1) {
         const l = pV.distanceTo(avatarPos);

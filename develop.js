@@ -65,8 +65,9 @@ ioServer.on('connection', (client) => {
         clients[id].position = position;
         ioServer.sockets.emit("move", clients);
     })
-    client.on('mouseDown', ({id, mouseDown}) =>{
+    client.on('mouseDown', ({id, mouseDown, distance}) =>{
         clients[id].mouseDown = mouseDown;
+        clients[id].distance = distance;
         ioServer.sockets.emit("mouseDown", clients);
     })
     client.on('disconnect', () => {

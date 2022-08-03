@@ -43,7 +43,8 @@ export default function Room(props: any) {
     const { id } = socket
     socket.emit('mouseDown', {
       id, 
-      mouseDown: [x, y, z]
+      mouseDown: [x, y, z],
+      distance: v.distanceTo(playerPosition)
     }
     )
   };

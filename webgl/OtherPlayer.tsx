@@ -16,11 +16,15 @@ export default function OtherAvatar(props: any){
     const avatarRef:any = useRef()
     const modelRef:any = useRef()
     const controlRef:any = useRef()
+    const { actions }:any = useAnimations(animations, modelRef)
+    const [actionName, setAction] = useState({action:'Idle', during:false})  
     const {camera} = useThree()
 
     const startWorld:boolean = useStore((s) => s.startWorld)
     const otherPosition:any = useStore((s) => s.otherPosition)
     const otherPointer:any = useStore((s) => s.otherPointer)
+    const otherDistance:any = useStore((s) => s.otherDistance);
+    const otherAnimation:any = useStore((s) => s.otherAnimation)
 
     // console.log("state--", otherPosition)
     useEffect(()=>{
@@ -29,6 +33,32 @@ export default function OtherAvatar(props: any){
 
       // avatarRef.current.rotation.y -= 2 * Math.PI
     })
+
+    useEffect(()=>{
+      if(otherAnimation!=="Idle"){
+        actions[otherAnimation].reset().fadeIn(0.5).play()
+        return () => actions[otherAnimation].fadeOut(0.3)
+      }else{
+        actions[actionName.action].reset().fadeIn(0.5).play()
+        return () => actions[actionName.action].fadeOut(0.3)
+      }
+    }, [actionName.action, otherAnimation])
+
+    useEffect(() => {    
+      console.log("==", otherDistance)
+      if(otherAnimation!=="Idle") 
+        return 
+  
+      let newActionName:string
+      
+      if(otherDistance<=0.2)
+        newActionName = "Idle"
+      else
+        newActionName = "Walk"
+      
+      setAction({action:newActionName, during:true})
+          
+    },[otherDistance])
     useEffect(()=>{
       if(typeof otherPosition === 'undefined') return
       
@@ -41,7 +71,7 @@ export default function OtherAvatar(props: any){
       // console.log(pV.distanceTo([avatarV[0],avatarV[1], avatarV[2]]))
       let alpha = Math.asin((pV.z - avatarV.z) / pV.distanceTo(avatarV))
       if ( Number.isNaN(alpha))return;
-      console.log("====", pV, avatarV, otherPosition)
+      // console.log("====", pV, avatarV, otherPosition)
       if(pV.x<avatarV.x) alpha = Math.PI - alpha
   
       if(avatarRef.current.rotation.y > 2 * Math.PI){
@@ -57,15 +87,15 @@ export default function OtherAvatar(props: any){
      
       let angleDelta
       if((alpha - angleY)>Math.PI) 
-        angleDelta = (alpha - angleY) - 2 * Math.PI
+        angleDelta = (alpha - angleY) - Math.PI*2
       else if((alpha - angleY)<-Math.PI)
-        angleDelta = 2 * Math.PI + (alpha - angleY)
+        angleDelta =  2*Math.PI + (alpha - angleY)
       else
         angleDelta = alpha - angleY
         
-        console.log("----------", angleY, alpha, typeof alpha, pV, avatarV)
+        // console.log("----------", angleY, alpha, typeof alpha, pV, avatarV)
         const newAngleY = avatarRef.current.rotation.y + angleDelta
-        console.log("newAngleY", newAngleY)
+        // console.log("newAngleY", newAngleY)
         gsap.to(avatarRef.current.rotation, 0.5, {y: newAngleY, ease:'Power2.easeOut'})
   
   
