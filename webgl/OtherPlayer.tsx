@@ -31,12 +31,19 @@ export default function OtherAvatar(props: any){
     })
     useEffect(()=>{
       if(typeof otherPosition === 'undefined') return
+      
       const pV = new THREE.Vector3(otherPointer[0], 0, -otherPointer[2])
-      const avatarV = new THREE.Vector3(otherPosition.x, 0, -otherPosition.z)
+      const avatarV = new THREE.Vector3(otherPosition.x, 0, -otherPosition.y)
+      
       const cameraV = new THREE.Vector3(camera.position.x, 0, camera.position.z)
+      
+      
+      // console.log(pV.distanceTo([avatarV[0],avatarV[1], avatarV[2]]))
       let alpha = Math.asin((pV.z - avatarV.z) / pV.distanceTo(avatarV))
+      if ( Number.isNaN(alpha))return;
+      console.log("====", pV, avatarV, otherPosition)
       if(pV.x<avatarV.x) alpha = Math.PI - alpha
-  console.log("----------", avatarRef.current.rotation)
+  
       if(avatarRef.current.rotation.y > 2 * Math.PI){
         avatarRef.current.rotation.y -= 2 * Math.PI
         console.log(' 360over', avatarRef.current.rotation.y, )
@@ -47,7 +54,7 @@ export default function OtherAvatar(props: any){
   
       const angleY = avatarRef.current.rotation.y
   
-  
+     
       let angleDelta
       if((alpha - angleY)>Math.PI) 
         angleDelta = (alpha - angleY) - 2 * Math.PI
@@ -55,9 +62,11 @@ export default function OtherAvatar(props: any){
         angleDelta = 2 * Math.PI + (alpha - angleY)
       else
         angleDelta = alpha - angleY
-  
+        
+        console.log("----------", angleY, alpha, typeof alpha, pV, avatarV)
         const newAngleY = avatarRef.current.rotation.y + angleDelta
-        // gsap.to(avatarRef.current.rotation, 0.5, {y: newAngleY, ease:'Power2.easeOut'})
+        console.log("newAngleY", newAngleY)
+        gsap.to(avatarRef.current.rotation, 0.5, {y: newAngleY, ease:'Power2.easeOut'})
   
   
   

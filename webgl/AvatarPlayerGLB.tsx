@@ -54,9 +54,8 @@ export default function AvatarPlayerGLB(props:any) {
     const cameraV = new THREE.Vector3(camera.position.x, 0, camera.position.z)
     let alpha = Math.asin((pV.z - avatarV.z) / pV.distanceTo(avatarV))
     if(pV.x<avatarV.x) alpha = Math.PI - alpha
-    console.log("===========", avatarRef.current.rotation);
+    console.log(pV, avatarV, alpha)
     if(avatarRef.current.rotation.y > 2 * Math.PI){
-      console.log("ZZZ")
       avatarRef.current.rotation.y -= 2 * Math.PI
       console.log(' 360over', avatarRef.current.rotation.y, )
     }else if(avatarRef.current.rotation.y < -2 * Math.PI){
@@ -75,7 +74,6 @@ export default function AvatarPlayerGLB(props:any) {
       angleDelta = 2 * Math.PI + (alpha - angleY)
     else
       angleDelta = alpha - angleY
-
       const newAngleY = avatarRef.current.rotation.y + angleDelta
       gsap.to(avatarRef.current.rotation, 0.5, {y: newAngleY, ease:'Power2.easeOut'})
 
