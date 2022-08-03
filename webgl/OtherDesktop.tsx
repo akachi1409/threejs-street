@@ -53,7 +53,7 @@ const OtherDesktop = (props: any) =>{
     <>
         <mesh 
             ref={ref}
-            position={props.position}
+            position={otherPosition}
             ></mesh>
     </>
     );

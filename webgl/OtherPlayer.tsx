@@ -62,10 +62,10 @@ export default function OtherAvatar(props: any){
   
   
             //******************************* */
-      const beta = alpha + Math.PI
-      const newDz =  3 * Math.sin(beta)
-      const newDx = 3 * Math.cos(beta)
-      const cameraPos = new THREE.Vector3(avatarV.x + newDx, 1.5, avatarV.z + newDz)    
+      // const beta = alpha + Math.PI
+      // const newDz =  3 * Math.sin(beta)
+      // const newDx = 3 * Math.cos(beta)
+      // const cameraPos = new THREE.Vector3(avatarV.x + newDx, 1.5, avatarV.z + newDz)    
       // gsap.to(camera.position, 0.5, {
       //   x: cameraPos.x, 
       //   y: cameraPos.y, 
@@ -94,7 +94,7 @@ export default function OtherAvatar(props: any){
           // console.log("state", otherPosition)
           const v1 = new THREE.Vector3(otherPosition.x, otherPosition.y, otherPosition.z)
           avatarRef.current.position.lerp(v1, 0.5)
-        //   gsap.to(controlRef.current.target, 0.5, {x:v1.x, y:v1.y+1.5, z:v1.z})
+          // gsap.to(avatarRef.current.target, 0.5, {x:v1.x, y:v1.y+1.5, z:v1.z})
           
         }
       })

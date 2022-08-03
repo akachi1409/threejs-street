@@ -220,14 +220,18 @@ const Home: NextPage = () => {
                     pointer: position
                   })
                   setFirstFlag(false)
-                  return(
-                    <PlayerDesktop position={position}/>
-                  )
-                }else{
-                  return(
-                    <PlayerDesktop/>
-                  )
+                  // return(
+                  //   <PlayerDesktop position={position}/>
+                  // )
                 }
+                // else{
+                //   return(
+                //     <PlayerDesktop/>
+                //   )
+                // }
+                return(
+                  <PlayerDesktop/>
+                )
               })}
               <Ball />
               {Object.keys(clients)
@@ -248,14 +252,18 @@ const Home: NextPage = () => {
                     otherPointer: position
                   })
                   setOtherFlag(false);
-                  return(
-                    <OtherDesktop position={position}/>
-                  )
-                }else{
-                  return(
-                    <OtherDesktop/>
-                  )
+                  // return(
+                  //   <OtherDesktop position={position}/>
+                  // )
                 }
+                // else{
+                //   return(
+                //     <OtherDesktop/>
+                //   )
+                // }
+                return(
+                      <OtherDesktop/>
+                    )
               })}
               {Object.keys(clients)
               .filter((clientKey) => clientKey !== socketClient.id)

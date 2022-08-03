@@ -57,7 +57,7 @@ const PlayerDesktop = (props: any) => {
     <>
       <mesh 
       ref={ref}
-      position={props.position}
+      position={playerPosition}
       ></mesh>
     </>
   );
