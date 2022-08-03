@@ -6,10 +6,9 @@
   "scripts": {
     "dev": "nodemon develop.js --watch -c tailwind.config.cjs",
     "dev1": "node develop.js",
-    "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"src/*.{js,jsx,json,md,ts,tsx,css}\""
+    "build": "vite build",
+    "start": "node develop.js",
+      "format": "prettier --write \"src/*.{js,jsx,json,md,ts,tsx,css}\""
   },
   "dependencies": {
     "@emotion/react": "latest",

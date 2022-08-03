@@ -129,7 +129,7 @@ const Home: NextPage = () => {
   const [clients, setClients] = useState({})
 
   const [firstFlag, setFirstFlag] = useState(true);
-  
+  const [otherFlag, setOtherFlag] = useState(true);
   useEffect(() => {
       // On mount initialize the socket connection
       setSocketClient(io())
@@ -221,19 +221,14 @@ const Home: NextPage = () => {
                   })
                   setFirstFlag(false)
                   return(
-                    // <PlayerDesktop/>
                     <PlayerDesktop position={position}/>
                   )
-                  
                 }else{
                   return(
                     <PlayerDesktop/>
                   )
                 }
-                
               })}
-              
-
               <Ball />
               {Object.keys(clients)
               .filter((clientKey) => clientKey === socketClient.id)
@@ -247,14 +242,20 @@ const Home: NextPage = () => {
               .filter((clientKey) => clientKey !== socketClient.id)
               .map((client)=>{
                 const { position } = clients[client];
-                console.log("otherdesktop", position)
-                useStore.setState({
-                  otherPosition: position,
-                  otherPointer: position
-                })
-                return(
-                  <OtherDesktop position={position}/>
-                )
+                if (otherFlag){
+                  useStore.setState({
+                    otherPosition: position,
+                    otherPointer: position
+                  })
+                  setOtherFlag(false);
+                  return(
+                    <OtherDesktop position={position}/>
+                  )
+                }else{
+                  return(
+                    <OtherDesktop/>
+                  )
+                }
               })}
               {Object.keys(clients)
               .filter((clientKey) => clientKey !== socketClient.id)

@@ -56,9 +56,11 @@ export default function AvatarPlayerGLB(props:any) {
     if(pV.x<avatarV.x) alpha = Math.PI - alpha
     console.log("===========", avatarRef.current.rotation);
     if(avatarRef.current.rotation.y > 2 * Math.PI){
+      console.log("ZZZ")
       avatarRef.current.rotation.y -= 2 * Math.PI
       console.log(' 360over', avatarRef.current.rotation.y, )
     }else if(avatarRef.current.rotation.y < -2 * Math.PI){
+      console.log("NNNs")
       avatarRef.current.rotation.y += 2 * Math.PI
       console.log('-360over', avatarRef.current.rotation.y, )
     }
