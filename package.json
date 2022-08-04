@@ -23,7 +23,6 @@
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
     "gsap": "^3.10.4",
-    "next": "12.1.6",
     "nipplejs": "^0.9.1",
     "node-sass": "^7.0.1",
     "prettier": "^2.4.1",
