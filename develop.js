@@ -61,6 +61,10 @@ ioServer.on('connection', (client) => {
     }
     ioServer.sockets.emit("move", clients);
     
+    // client.on("enter",  ({id, position}) => {
+    //     clients[id].position = position;
+    //     ioServer.sockets.emit("move", clients);
+    // })
     client.on("move", ({id, position}) => {
         clients[id].position = position;
         ioServer.sockets.emit("move", clients);

@@ -54,14 +54,10 @@ export default function AvatarPlayerGLB(props:any) {
     const cameraV = new THREE.Vector3(camera.position.x, 0, camera.position.z)
     let alpha = Math.asin((pV.z - avatarV.z) / pV.distanceTo(avatarV))
     if(pV.x<avatarV.x) alpha = Math.PI - alpha
-    console.log(pV, avatarV, alpha)
     if(avatarRef.current.rotation.y > 2 * Math.PI){
       avatarRef.current.rotation.y -= 2 * Math.PI
-      console.log(' 360over', avatarRef.current.rotation.y, )
     }else if(avatarRef.current.rotation.y < -2 * Math.PI){
-      console.log("NNNs")
       avatarRef.current.rotation.y += 2 * Math.PI
-      console.log('-360over', avatarRef.current.rotation.y, )
     }
 
     const angleY = avatarRef.current.rotation.y
@@ -138,13 +134,11 @@ export default function AvatarPlayerGLB(props:any) {
   })
   useEffect(()=>{
     const onControlChange = (val) =>{
-      console.log("-----", val);
       const { position, rotation } = val.target.object
       const { id } = socket
       const posArray = []
       const rotArray = []
       position.toArray(posArray)
-      console.log("----", id, position);
       socket.emit('move', {
           id,
           position: posArray,

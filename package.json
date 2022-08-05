@@ -7,7 +7,7 @@
     "dev": "nodemon develop.js --watch -c tailwind.config.cjs",
     "dev1": "node develop.js",
     "build": "vite build",
-    "start": "node develop.js",
+    "start": "node develop.js  --watch -c tailwind.config.cjs",
       "format": "prettier --write \"src/*.{js,jsx,json,md,ts,tsx,css}\""
   },
   "dependencies": {
